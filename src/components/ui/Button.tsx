@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FC, forwardRef } from "react";
+import { ButtonHTMLAttributes, forwardRef } from "react";
 import { VariantProps, cva } from "class-variance-authority";
 import { Loader2 } from "lucide-react";
 
@@ -33,7 +33,7 @@ export const buttonVariants = cva(
 interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  isLoading: boolean;
+  isLoading?: boolean;
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
