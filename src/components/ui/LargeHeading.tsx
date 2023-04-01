@@ -18,11 +18,11 @@ const headingVariants = cva(
   }
 );
 
-interface ILargeHeading
+interface LargeHeadingProps
   extends HTMLAttributes<HTMLHeadingElement>,
     VariantProps<typeof headingVariants> {}
 
-const LargeHeading = forwardRef<HTMLHeadingElement, ILargeHeading>(
+const LargeHeading = forwardRef<HTMLHeadingElement, LargeHeadingProps>(
   ({ children, className, size, ...props }, ref) => {
     return (
       <h1

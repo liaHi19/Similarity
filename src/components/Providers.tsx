@@ -11,6 +11,7 @@ const Providers: FC<IProviders> = ({ children }) => {
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       <SessionProvider>{children}</SessionProvider>
+      <div className="h-40 md:hidden" />
     </ThemeProvider>
   );
 };

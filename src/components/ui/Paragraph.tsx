@@ -16,11 +16,11 @@ const paragraphVariants = cva(
     },
   }
 );
-interface IParagraph
+interface ParagraphProps
   extends HTMLAttributes<HTMLParagraphElement>,
     VariantProps<typeof paragraphVariants> {}
 
-const Paragraph = forwardRef<HTMLParagraphElement, IParagraph>(
+const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
   ({ className, children, size, ...props }, ref) => {
     return (
       <p
