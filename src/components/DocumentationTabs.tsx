@@ -1,3 +1,4 @@
+"use client";
 import { FC } from "react";
 import SimpleBar from "simplebar-react";
 
@@ -15,14 +16,16 @@ const DocumentationTabs: FC = () => {
       </TabsList>
       <TabsContent value="nodejs">
         {
-          /* <SimpleBar></SimpleBar> */
-          <Code language="javascript" code={nodejs} show animated />
+          <SimpleBar>
+            <Code language="javascript" code={nodejs} show animated />
+          </SimpleBar>
         }
       </TabsContent>
       <TabsContent value="python">
         {
-          /* <SimpleBar></SimpleBar> */
-          <Code language="python" code={python} show animated />
+          <SimpleBar>
+            <Code language="python" code={python} show animated />
+          </SimpleBar>
         }
       </TabsContent>
     </Tabs>
