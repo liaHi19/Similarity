@@ -23,8 +23,13 @@ const page = async () => {
     where: { userId: user.user.id, enabled: true },
   });
   return (
-    <div className="max-w-7xl mx-auto mt-16">
-      {apiKey ? <ApiDashboard /> : <RequestApiKey />}
+    <div className="max-w-7xl mx-auto pt-32">
+      {apiKey ? (
+        // @ts-expect-error Server Component
+        <ApiDashboard />
+      ) : (
+        <RequestApiKey />
+      )}
     </div>
   );
 };
