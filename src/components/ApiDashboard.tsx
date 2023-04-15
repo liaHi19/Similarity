@@ -7,6 +7,7 @@ import { db } from "@/lib/db";
 import LargeHeading from "./ui/LargeHeading";
 import Paragraph from "./ui/Paragraph";
 import { Input } from "./ui/Input";
+import Table from "./ui/Table";
 
 const ApiDashboard = async () => {
   const user = await getServerSession(authOptions);
@@ -21,7 +22,7 @@ const ApiDashboard = async () => {
     where: { apiKeyId: { in: apiKeys.map((key) => key.id) } },
   });
 
-  const serializableRequest = userRequests.map((req) => ({
+  const serializableRequests = userRequests.map((req) => ({
     ...req,
     timestamp: formatDistance(new Date(req.timestamp), new Date()),
   }));
@@ -35,6 +36,7 @@ const ApiDashboard = async () => {
       <Paragraph className="text-center md:text-left mt-4 -mb-4">
         Your API History:
       </Paragraph>
+      <Table userRequests={serializableRequests} />
     </div>
   );
 };
