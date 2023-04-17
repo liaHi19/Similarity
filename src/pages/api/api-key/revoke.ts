@@ -27,7 +27,7 @@ const handler = async (
     if (!existingApiKey) {
       return res
         .status(500)
-        .json({ error: "This API key could not be evoked", success: false });
+        .json({ error: "This API key could not be revoked", success: false });
     }
 
     await db.apiKey.update({

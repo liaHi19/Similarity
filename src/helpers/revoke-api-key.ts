@@ -1,5 +1,5 @@
 export const revokeApiKey = async ({ keyId }: { keyId: string }) => {
-  const res = await fetch("/api/api-keys/revoke", {
+  const res = await fetch("/api/api-key/revoke", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(keyId),

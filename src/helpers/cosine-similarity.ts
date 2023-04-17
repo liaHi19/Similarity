@@ -9,6 +9,6 @@ export const cosineSimilarity = (A: number[], B: number[]) => {
   }
   mA = Math.sqrt(mA);
   mB = Math.sqrt(mB);
-  var similarity = dotproduct / (mA * mB); // here you needed extra brackets
+  var similarity = dotproduct / (mA * mB);
   return similarity;
 };

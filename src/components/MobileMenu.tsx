@@ -14,7 +14,6 @@ import {
 } from "@/ui/DropdownMenu";
 import Button from "@/ui/Button";
 import { Icons } from "./Icons";
-import ThemeToggle from "./ThemeToggle";
 
 const MobileMenu: FC = () => {
   const { data: session } = useSession();
@@ -38,7 +37,7 @@ const MobileMenu: FC = () => {
       <DropdownMenu open={open} onOpenChange={setOpen}>
         <DropdownMenuTrigger asChild onClick={() => setOpen((prev) => !prev)}>
           <Button variant="ghost">
-            {open ? <Icons.XIcon /> : <Icons.AlignJustify />}
+            <Icons.AlignJustify />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-screen min-h-[30vh] py-6">
@@ -72,14 +71,18 @@ const MobileMenu: FC = () => {
                 <span>Docs</span>
               </Link>
             </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={signUserOut} className="gap-1.5">
-              <Icons.User className="mr-2 h-5 w-5" />
-              <span>{isLoading ? "Signing out" : "Sign out"}</span>
-              {isLoading ? (
-                <Icons.Loader2 className="animate-spin h-4 w-4" />
-              ) : null}
-            </DropdownMenuItem>
+            {session && (
+              <>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={signUserOut} className="gap-1.5">
+                  <Icons.User className="mr-2 h-5 w-5" />
+                  <span>{isLoading ? "Signing out" : "Sign out"}</span>
+                  {isLoading ? (
+                    <Icons.Loader2 className="animate-spin h-4 w-4" />
+                  ) : null}
+                </DropdownMenuItem>
+              </>
+            )}
           </DropdownMenuGroup>
         </DropdownMenuContent>
       </DropdownMenu>

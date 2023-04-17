@@ -9,7 +9,6 @@ import {
   Loader2,
   User,
   AlignJustify,
-  XIcon,
 } from "lucide-react";
 
 export const Icons = {
@@ -23,5 +22,4 @@ export const Icons = {
   Loader2,
   User,
   AlignJustify,
-  XIcon,
 };
