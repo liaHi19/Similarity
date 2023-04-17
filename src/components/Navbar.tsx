@@ -7,6 +7,7 @@ import ThemeToggle from "./ThemeToggle";
 
 import { buttonVariants } from "@/ui/Button";
 import { authOptions } from "@/lib/auth";
+import MobileMenu from "./MobileMenu";
 
 const Navbar = async () => {
   const session = await getServerSession(authOptions);
@@ -17,11 +18,10 @@ const Navbar = async () => {
         <Link href="/" className={buttonVariants({ variant: "link" })}>
           Similarity API
         </Link>
-
-        <div className="md:hidden">
+        <div className="flex items-center md:hidden">
+          <MobileMenu />
           <ThemeToggle />
         </div>
-
         <div className="hidden md:flex gap-4">
           <ThemeToggle />
           <Link
