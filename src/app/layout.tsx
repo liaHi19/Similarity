@@ -6,7 +6,6 @@ import { Toaster } from "@/components/ui/Toast";
 
 import "@/styles/globals.css";
 import { cn } from "@/lib/utils";
-import MobileMenu from "@/components/MobileMenu";
 
 const inter = Inter({ subsets: ["latin"] });
 

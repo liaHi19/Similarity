@@ -1,4 +1,3 @@
-import { NextPage } from "next";
 import type { Metadata } from "next";
 
 import "simplebar-react/dist/simplebar.min.css";
@@ -13,7 +12,7 @@ export const metadata: Metadata = {
   description: "Free & open-source text similarity API",
 };
 
-const page: NextPage = () => {
+const Documentation = () => {
   return (
     <div className="container max-w-7xl mx-auto mt-12">
       <div className="flex flex-col items-center justify-center gap-6">
@@ -28,4 +27,4 @@ const page: NextPage = () => {
   );
 };
 
-export default page;
+export default Documentation;

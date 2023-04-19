@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description: "Free & open-source text similarity API",
 };
 
-const page = async () => {
+const Dashboard = async () => {
   const user = await getServerSession(authOptions);
 
   if (!user) return notFound();
@@ -34,4 +34,4 @@ const page = async () => {
   );
 };
 
-export default page;
+export default Dashboard;

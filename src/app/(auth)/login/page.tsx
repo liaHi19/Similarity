@@ -1,4 +1,3 @@
-import { NextPage } from "next";
 import Link from "next/link";
 
 import AuthForm from "@/components/auth/AuthForm";
@@ -8,7 +7,7 @@ import { Icons } from "@/components/Icons";
 
 import { buttonVariants } from "@/components/ui/Button";
 
-const page: NextPage = () => {
+const Login = () => {
   return (
     <div className="absolute inset-0 mx-auto container h-screen flex flex-col justify-center items-center">
       <div className="mx-auto flex w-full flex-col justify-center space-y-6 max-w-lg">
@@ -30,4 +29,4 @@ const page: NextPage = () => {
   );
 };
 
-export default page;
+export default Login;

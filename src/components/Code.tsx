@@ -40,7 +40,7 @@ const Code: FC<CodeProps> = ({
 
       return () => clearTimeout(timer);
     }
-  }, [show, animated, animationDelay]);
+  }, [show, animated, animationDelay, code]);
 
   const lines = text.split(/\r\n|\r|\n/).length;
   const theme = applicationTheme === "light" ? lightTheme : darkTheme;
